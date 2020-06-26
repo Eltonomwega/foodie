@@ -147,7 +147,6 @@
     android:text="Total price: $"
     android:textColor="@android:color/white"
     android:backgroundTint="@color/colorPrimaryDark"
-    android:onClick="callApi"
     android:layout_below="@+id/cardContent"
     android:layout_marginTop="8dp"
     android:layout_centerHorizontal="true"
