@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/splashIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_splashicon"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Foodie"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/splashIcon"
+        android:fontFamily="@font/quicksand_light"
+        android:textStyle="bold"
+        android:textFontWeight="700"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

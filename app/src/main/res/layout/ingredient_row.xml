@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/ImgCard"
+    android:layout_width="90dp"
+    android:layout_height="90dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp"
+    android:backgroundTint="@android:color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/ingImg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:id="@+id/ingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brocolli"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:fontFamily="@font/quicksand_light"
+        android:textFontWeight="700"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@+id/ImgCard"
+        android:layout_toRightOf="@+id/ImgCard" />
+    <TextView
+        android:id="@+id/ingQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="150 g"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:fontFamily="@font/quicksand_light"
+        android:textFontWeight="700"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/ingName"
+        android:layout_toEndOf="@+id/ImgCard"
+        android:layout_toRightOf="@+id/ImgCard" />
+</RelativeLayout>

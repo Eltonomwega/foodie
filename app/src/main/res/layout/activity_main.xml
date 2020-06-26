@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+    <ImageView
+        android:id="@+id/foodImage"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:scaleType="centerCrop"
+    />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/CustomCardViewStyle"
+        android:backgroundTint="@android:color/white"
+        android:layout_marginTop="300dp"
+        app:cardElevation="0dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:id="@+id/foodTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textAlignment="center"
+                android:text=""
+                android:fontFamily="@font/quicksand_light"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:id="@+id/iconHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/foodTitle">
+            <ImageView
+                android:id="@+id/calIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fire"
+                />
+            <TextView
+                android:id="@+id/Calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_light"
+                android:text="412 Calories"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="3dp"/>
+            <ImageView
+                android:id="@+id/timeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_clock"
+                android:layout_marginLeft="12dp"
+                />
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_light"
+                android:text="30"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="3dp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/servingsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_light"
+                android:text="How many people"
+                android:layout_below="@+id/iconHolder"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/servings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_light"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:layout_below="@+id/servingsText"
+                android:textSize="25sp"
+                android:layout_centerHorizontal="true"
+                android:textFontWeight="700"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/IngredientTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_light"
+                android:text="Ingredients"
+                android:textFontWeight="700"
+                android:textColor="@android:color/black"
+                android:layout_below="@+id/servings"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingList"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/IngredientTitle"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/Price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cornerRadius="6dp"
+    android:textSize="15sp"
+    android:fontFamily="@font/quicksand_light"
+    android:textFontWeight="700"
+    android:textStyle="bold"
+    android:text="Total price: $"
+    android:textColor="@android:color/white"
+    android:backgroundTint="@color/colorPrimaryDark"
+    android:onClick="callApi"
+    android:layout_below="@+id/cardContent"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:textAllCaps="false"
+    />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+   <!-- <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:background="@drawable/button_round"
+        android:onClick="callApi"
+         />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_favorite"
+        app:tint="@null"
+        app:borderWidth="0dp"
+        android:onClick="bookmarkDish"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

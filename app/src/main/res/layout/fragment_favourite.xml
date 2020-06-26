@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/frag_fav"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.elton.foodie.Fragments.FavouriteFragment">
+
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/favouriteDishes"
+            android:layout_marginBottom="56dp"
+            />
+
+
+
+
+
+   <!-- <RelativeLayout
+        android:id="@+id/connectionHome"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/sad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_sad"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sorry this feature is not available in your country. Stay tuned for further updates :)!"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/darker_gray"
+            android:fontFamily="@font/quicksand_light"
+            android:layout_below="@+id/sad"
+            />
+    </RelativeLayout>-->
+
+</FrameLayout>
