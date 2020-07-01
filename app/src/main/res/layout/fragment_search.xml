@@ -53,7 +53,6 @@
       android:hint="Pesto Chicken Bake"
       android:fontFamily="@font/quicksand_light"
       android:textCursorDrawable="@null"
-
       android:drawableLeft="@drawable/ic_search_24dp" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchResults"

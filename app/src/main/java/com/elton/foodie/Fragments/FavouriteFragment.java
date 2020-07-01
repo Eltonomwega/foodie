@@ -1,18 +1,16 @@
 package com.elton.foodie.Fragments;
 
-import android.content.ClipData;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import com.elton.foodie.Adapters.FavouriteListAdapter;
 import com.elton.foodie.Adapters.RecyclerItemTouchHelper;
 import com.elton.foodie.DB.Favourite;
-import com.elton.foodie.DB.FavouriteViewModel;
+import com.elton.foodie.DB.FoodieViewModel;
 import com.elton.foodie.R;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -31,7 +29,7 @@ public class FavouriteFragment extends Fragment implements RecyclerItemTouchHelp
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private FavouriteViewModel favouriteViewModel;
+    private FoodieViewModel foodieViewModel;
     private List<Favourite> mfavourites;
     private FavouriteListAdapter adapter;
     FrameLayout frameLayout;
@@ -74,9 +72,9 @@ public class FavouriteFragment extends Fragment implements RecyclerItemTouchHelp
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        favouriteViewModel = new ViewModelProvider(this).get(FavouriteViewModel.class);
+        foodieViewModel = new ViewModelProvider(this).get(FoodieViewModel.class);
 
-        favouriteViewModel.getAllFavourites().observe(getViewLifecycleOwner(), new Observer<List<Favourite>>() {
+        foodieViewModel.getAllFavourites().observe(getViewLifecycleOwner(), new Observer<List<Favourite>>() {
             @Override
             public void onChanged(List<Favourite> favourites) {
                 mfavourites = favourites;
@@ -104,7 +102,7 @@ public class FavouriteFragment extends Fragment implements RecyclerItemTouchHelp
             // remove the item from recycler view
             adapter.removeItem(viewHolder.getAdapterPosition());
 
-            favouriteViewModel.delete(deletedItem);
+            foodieViewModel.delete(deletedItem);
             // showing snack bar with Undo option
             Snackbar snackbar = Snackbar
                     .make(frameLayout, name + " removed from favourite!", Snackbar.LENGTH_LONG);
@@ -114,7 +112,7 @@ public class FavouriteFragment extends Fragment implements RecyclerItemTouchHelp
 
                     // undo is selected, restore the deleted item
                     adapter.restoreItem(deletedItem, deletedIndex);
-                    favouriteViewModel.insert(deletedItem);
+                    foodieViewModel.insert(deletedItem);
                 }
             });
             snackbar.setBackgroundTint(Color.BLACK);

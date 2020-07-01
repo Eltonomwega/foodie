@@ -1,6 +1,7 @@
 package com.elton.foodie.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,8 +52,10 @@ public class FavouriteListAdapter extends RecyclerView.Adapter<FavouriteListAdap
 
     @Override
     public int getItemCount() {
-        if (FavouriteList != null)
-            return  FavouriteList.size();
+        if (FavouriteList != null) {
+            Log.d("bookMark", Integer.toString(FavouriteList.size()));
+            return FavouriteList.size();
+        }
         else return 0;
     }
 

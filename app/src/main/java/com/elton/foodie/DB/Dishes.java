@@ -1,30 +1,33 @@
 package com.elton.foodie.DB;
 
-
-
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "favourite_dishes")
-public class Favourite {
+@Entity(tableName = "daily_dishes")
+
+public class Dishes {
+
     @NonNull
     @PrimaryKey
     private String id;
 
+    @NonNull
     public String getId() {
         return this.id;
     }
 
-    public Favourite(@NonNull String id, @NonNull String title, @NonNull String readyTime,
-                     @NonNull String imgUrl, @NonNull String calories){
+    public Dishes(@NonNull String id, @NonNull String title, @NonNull String readyTime,
+                     @NonNull String imgUrl, @NonNull String calories,@NonNull String category){
         this.id=id;
         this.title=title;
         this.readyTime= readyTime;
         this.imgUrl = imgUrl;
         this.calories = calories;
+        this.category = category;
     }
+
 
     @NonNull
     @ColumnInfo(name = "title")
@@ -50,5 +53,15 @@ public class Favourite {
 
     @NonNull
     public String getCalories(){return this.calories;}
+
+    @NonNull
+    @ColumnInfo(name = "category")
+    private String category;
+
+    @NonNull
+    public String getCategory(){return this.category;}
+
+
+
 
 }

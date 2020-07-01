@@ -31,4 +31,5 @@ task clean(type: Delete) {
 ext {
     roomVersion = '2.2.5'
     archLifecycleVersion = '2.2.0'
+    projectDir = 'C:/Users/Elton psycho/Downloads/Foodie/app/src/main/java/com/elton/foodie/Utils'
 }

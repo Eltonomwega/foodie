@@ -1,4 +1,4 @@
-package com.elton.foodie;
+package com.elton.foodie.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import com.elton.foodie.Fragments.FavouriteFragment;
 import com.elton.foodie.Fragments.HomeFragment;
 import com.elton.foodie.Fragments.SearchFragment;
+import com.elton.foodie.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DiscoverActivity extends AppCompatActivity {

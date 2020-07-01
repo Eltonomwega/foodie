@@ -1,8 +1,10 @@
-package com.elton.foodie;
+package com.elton.foodie.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.elton.foodie.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

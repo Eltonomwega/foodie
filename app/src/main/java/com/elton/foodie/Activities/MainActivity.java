@@ -1,4 +1,4 @@
-package com.elton.foodie;
+package com.elton.foodie.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -20,10 +20,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.elton.foodie.Adapters.IngredientsAdapter;
 import com.elton.foodie.DB.Favourite;
-import com.elton.foodie.DB.FavouriteViewModel;
+import com.elton.foodie.DB.FoodieViewModel;
 import com.elton.foodie.Fragments.SearchFragment;
 import com.elton.foodie.Modals.IngredientsModalClass;
 import com.elton.foodie.Networking.SpoonacularRequests;
+import com.elton.foodie.R;
 import com.elton.foodie.Utils.VolleyCallback;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
    public String dishId;
   public   Uri uri;
    public String imgUrl;
-    private FavouriteViewModel mFavouriteViewModel;
+    private FoodieViewModel mFoodieViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
         // executing the request (adding to queue)
         queue.add(stringRequest);
 
-        mFavouriteViewModel = new ViewModelProvider(this).get(FavouriteViewModel.class);
+        mFoodieViewModel = new ViewModelProvider(this).get(FoodieViewModel.class);
 
-        mFavouriteViewModel.getAllFavourites().observe(this, favourites -> {
+        mFoodieViewModel.getAllFavourites().observe(this, favourites -> {
 
         });
     }
@@ -129,18 +130,19 @@ public class MainActivity extends AppCompatActivity {
 
         }else {
             Favourite favourite = new Favourite(dishId, title, readyTime + " Min", img, calories);
-            if (mFavouriteViewModel.selectDish(dishId)==null){
+            if (mFoodieViewModel.selectDish(dishId)==null){
                 //mfloatingActionButton.setBackgroundResource(R.drawable.ic_favorite);
 
+                Log.d("bookMark",favourite.getTitle());
 
 
-                Log.d("bookMark","This already exists");
-                mFavouriteViewModel.insert(favourite);
+                mFoodieViewModel.insert(favourite);
                 mfloatingActionButton.setImageResource(R.drawable.ic_favourite_filled);
+                Log.d("bookMark","This already exists");
 
             }else {
                 //mfloatingActionButton.setBackgroundResource(R.drawable.ic_favourite_filled);
-                mFavouriteViewModel.delete(favourite);
+                mFoodieViewModel.delete(favourite);
                 mfloatingActionButton.setImageResource(R.drawable.ic_favorite);
                 Log.d("bookMark","This does not exists");
             }

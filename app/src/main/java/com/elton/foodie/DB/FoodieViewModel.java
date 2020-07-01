@@ -8,19 +8,28 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-public class FavouriteViewModel extends AndroidViewModel {
-    private FavouriteRepository mRepository;
+public class FoodieViewModel extends AndroidViewModel {
+    private FoodieRepository mRepository;
     private LiveData<List<Favourite>> mFavourite;
+    private LiveData<List<Dishes>> mDishes;
+    String Category;
 
-    public FavouriteViewModel(@NonNull Application application) {
+    public FoodieViewModel(@NonNull Application application) {
         super(application);
-        mRepository = new FavouriteRepository(application);
+        mRepository = new FoodieRepository(application);
         mFavourite = mRepository.getAllFavourites();
+        //mDishes = mRepository.getAllDishes(Category);
     }
 
     public LiveData<List<Favourite>> getAllFavourites(){return mFavourite;}
+ /*   public LiveData<List<Dishes>> getAllDishes(String category){
+        Category = category;
+        return mDishes;}*/
 
-    public void insert(Favourite favourite){mRepository.insert(favourite);}
+
+    public void insert(Favourite favourite){
+
+        mRepository.insert(favourite);}
     public String selectDish(String id){return mRepository.selectDish(id);}
     public void  delete(Favourite favourite){mRepository.deleteDish(favourite);}
 }

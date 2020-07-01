@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.elton.foodie.MainActivity;
+import com.elton.foodie.Activities.MainActivity;
 import com.elton.foodie.Adapters.MealPlanAdapter;
 import com.elton.foodie.Modals.MealPlanModalClass;
 import com.elton.foodie.Networking.SpoonacularRequests;

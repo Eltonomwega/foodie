@@ -10,7 +10,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 @Dao
-public interface FavouriteDao {
+public interface FoodieDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Favourite favourite);
@@ -27,4 +27,16 @@ public interface FavouriteDao {
 
     @Query("SELECT * from favourite_dishes ORDER BY title ASC")
     LiveData<List<Favourite>> getFavouriteDishes();
+
+    //Dishes
+    /*@Insert(onConflict = OnConflictStrategy.IGNORE)
+    void insert(Dishes dishes);*/
+
+    @Delete
+    void deleteDish(Dishes dishes);
+
+
+    @Query("SELECT * from daily_dishes WHERE category = :dishcategory")
+    LiveData<List<Dishes>> getCategoryDishes(String dishcategory);
+
 }

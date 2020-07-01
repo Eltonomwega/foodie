@@ -18,7 +18,7 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.elton.foodie.MainActivity;
+import com.elton.foodie.Activities.MainActivity;
 import com.elton.foodie.Modals.APIModalClass;
 import com.elton.foodie.R;
 import com.elton.foodie.Utils.VolleyCallback;

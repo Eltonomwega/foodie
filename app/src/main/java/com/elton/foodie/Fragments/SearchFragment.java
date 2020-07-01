@@ -16,7 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.elton.foodie.Modals.DishResultModalClass;
-import com.elton.foodie.MainActivity;
+import com.elton.foodie.Activities.MainActivity;
 import com.elton.foodie.Networking.SpoonacularRequests;
 import com.elton.foodie.R;
 import com.elton.foodie.Adapters.SearchResultAdapter;
@@ -150,8 +150,6 @@ public class SearchFragment extends Fragment {
 
 
     }
-
-
 
     private void initRecyclerview(){
         RecyclerView recyclerView = view.findViewById(R.id.searchResults);
